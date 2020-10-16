@@ -1,0 +1,9 @@
+mixin paragraph
+    p Hello
+    
+mixin paragraph2(mycontent,id)
+    p(id=id)= mycontent
+
+mixin formText(textID,textValue)
+    label(for=textID)= textValue
+    input(type='text',name=textID,id=textID)

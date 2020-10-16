@@ -1,0 +1,45 @@
+extends ../layouts/layout.pug
+include ../includes/mixins.pug
+block headContent
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+block bodyContent
+        - var myTitle = 'Hey from Pug'
+        - var mySkills = ['PHP','MySql','SAAS']
+        
+        if myTitle
+            h1 #{myTitle}
+            p(class='myP',id='myPid') hello world
+
+        div(style={color:'gray',background:'black'})
+        div.myDiv.my2nddiv#mydivID
+
+        #myDivID2
+
+        ul  
+            each val in mySkills    
+                li= val
+            
+      
+
+        +paragraph
+        +paragraph2('Hey, how is it going?','myParaId')
+        
+
+        form(action='',method='POST')
+            label(for='firstName') First Name:
+            input(type='text',name='firstName',id='firstName')
+
+            +formText('lastName','Last Name:')
+            +formText('email','Email:')
+
+            label(for='myList') Occupation:
+            select(id='myList',name='myList')
+                option(value='Designer') Designer
+                option(value ='coder') Coder
+
+            input(type='button',value='Submit')
+
+
+            
